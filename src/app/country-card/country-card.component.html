@@ -1,0 +1,10 @@
+<a [routerLink]="['/country-detail']" [state]="countryData" 
+class="text-decoration-none card" style="width: 18rem;">
+  <img class="card-img-top" src="{{ countryData.flags.svg }}">
+  <div class="card-body">
+    <h5 class="card-title">{{ countryData.name.common }}</h5>
+    <p class="card-text">Population: {{ countryData.population }}</p>
+    <p class="card-text">Region: {{ countryData.region }}</p>
+    <p class="card-text">Capital: {{ countryData.capital }}</p>
+  </div>
+</a>

@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <button class="btn border shadow-sm px-5" routerLink="/"><i class="bi bi-arrow-left"></i> Back</button>
+    <div class="row mt-5">
+        <div class="col">
+            <img src="{{ countryData.flags.svg }}" alt="" class="img-fluid">
+        </div>
+        <div class="col d-flex align-items-center justify-content-center">
+            <div class="w-100 ms-5">
+                <h1 class="fw-bold">{{ countryData.name.common }}</h1>
+                <div class="row mt-4">
+                    <div class="col">
+                        <p><span class="me-2 fw-bold">Native Name:</span>{{ nativeName[nativeNameKeys[0]].official }}</p>
+                        <p><span class="me-2 fw-bold">Population:</span>{{ countryData.population }}</p>
+                        <p><span class="me-2 fw-bold">Region:</span>{{ countryData.region }}</p>
+                        <p><span class="me-2 fw-bold">Subregion:</span>{{ countryData.subregion }}</p>
+                        <p><span class="me-2 fw-bold">Capital:</span>{{ countryData.capital }}</p>
+                    </div>
+                    <div class="col">
+                        <p><span class="me-2 fw-bold">Top Level Domain:</span>{{ countryData.tld }}</p>
+                        <p><span class="me-2 fw-bold">Currencies:</span>{{ currencies[currenciesKeys[0]].name }}</p>
+                        <p><span class="me-2 fw-bold">Languages:</span>{{ languages[languagesKeys[0]] }}</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <span class="fw-bold">Border Countries:</span>
+                    <button *ngFor="let country of countryData.borders" class="btn border shadow-sm">{{ country }}</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

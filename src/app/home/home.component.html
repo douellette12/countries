@@ -1,0 +1,27 @@
+<section>
+    <div class="container pt-5">
+        <div class="d-flex justify-content-between">
+            <form [formGroup]="countrySearchForm" (ngSubmit)="search()">
+                <div class="position-relative">
+                    <button type="submit" class="btn position-absolute"><i class="bi bi-search"></i></button>
+                    <input required class="form-control ps-5" type="text" placeholder="Search for a country..." formControlName="input">
+                </div>
+            </form>
+            <form [formGroup]="countryFilterForm" (change)="filter()">
+                <select class="form-select" aria-label="Default select example" required formControlName="selection">
+                    <option disabled selected>Filter by Region</option>
+                    <option value="Africa">Africa</option>
+                    <option value="Americas">Americas</option>
+                    <option value="Asia">Asia</option>
+                    <option value="Europe">Europe</option>
+                    <option value="Oceania">Oceania</option>
+                </select>
+            </form>
+        </div>
+        <div class="mt-5 row">
+            <ng-container *ngFor="let country of searchCountry">
+                <app-country-card [countryData]="country" class="col d-flex align-item-stretch mb-5"></app-country-card>
+            </ng-container>
+        </div>
+    </div>
+</section>

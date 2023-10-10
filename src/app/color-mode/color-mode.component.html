@@ -1,0 +1,10 @@
+<button class="nav-link active" aria-current="page" (click)="toggleTheme()">
+    <div *ngIf="colorMode == 'light'; else lightMode">
+        <i class="bi bi-moon"></i>
+        <span class="ms-2">Dark Mode</span>
+    </div>
+    <ng-template #lightMode>
+        <i class="bi bi-sun"></i>
+        <span class="ms-2">Light Mode</span>
+    </ng-template>
+</button>
