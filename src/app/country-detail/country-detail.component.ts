@@ -20,7 +20,6 @@ export class CountryDetailComponent{
     this.nativeName = this.countryData.name.nativeName
     this.currencies = this.countryData.currencies
     this.languages = this.countryData.languages
-    console.log(this.countryData)
     this.nativeNameKeys = Object.keys(this.nativeName)
     this.currenciesKeys = Object.keys(this.currencies)
     this.languagesKeys = Object.keys(this.languages)
