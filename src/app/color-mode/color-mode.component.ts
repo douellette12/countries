@@ -6,7 +6,7 @@ import { Component, Renderer2 } from '@angular/core';
   styleUrls: ['./color-mode.component.scss']
 })
 export class ColorModeComponent {
-  colorMode = "light"
+  colorMode = "dark"
 
   constructor(private renderer: Renderer2) {
     
