@@ -12,7 +12,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { ColorModeComponent } from './color-mode/color-mode.component';
 import { AuthModule } from '@auth0/auth0-angular';
-import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -21,8 +20,7 @@ import { LandingComponent } from './landing/landing.component';
     HomeComponent,
     CountryCardComponent,
     CountryDetailComponent,
-    ColorModeComponent,
-    LandingComponent
+    ColorModeComponent
   ],
   imports: [
     BrowserModule,
