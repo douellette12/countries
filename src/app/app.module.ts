@@ -11,6 +11,8 @@ import { CountryCardComponent } from './country-card/country-card.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CountryDetailComponent } from './country-detail/country-detail.component';
 import { ColorModeComponent } from './color-mode/color-mode.component';
+import { AuthModule } from '@auth0/auth0-angular';
+import { LandingComponent } from './landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -19,14 +21,22 @@ import { ColorModeComponent } from './color-mode/color-mode.component';
     HomeComponent,
     CountryCardComponent,
     CountryDetailComponent,
-    ColorModeComponent
+    ColorModeComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AuthModule.forRoot({
+      domain: 'countries.us.auth0.com',
+      clientId: 'y6uIhnBApWjv7wyPVJriKuPVPI0IPYdZ',
+      authorizationParams: {
+        redirect_uri: window.location.origin
+      }
+    })
   ],
   providers: [DataService, CountryService],
   bootstrap: [AppComponent]
