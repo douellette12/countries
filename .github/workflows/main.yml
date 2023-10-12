@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build
-      - name: npm run build
+        run: npm run build
       - name: Archive build
         if: success()
         uses: actions/upload-artifact@v1
