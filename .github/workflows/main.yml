@@ -11,18 +11,18 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-      - name: Use Node 18.x
-        uses: actions/setup-node@v3
+        uses: actions/checkout
+      - name: Use Node 18
+        uses: actions/setup-node
         with:
-          node-version: '18.x'
+          node-version: '18'
       - name: Install dependencies
         run: npm ci
       - name: Build
         run: npm run build
       - name: Archive build
         if: success()
-        uses: actions/upload-artifact@v1
+        uses: actions/upload-artifact
         with:
           name: deploy_dist
           path: dist
@@ -31,9 +31,9 @@ jobs:
     needs: build
     steps:
       - name: Checkout
-        uses: actions/checkout@v1
+        uses: actions/checkout
       - name: Download build
-        uses: actions/download-artifact@v1
+        uses: actions/download-artifact
         with:
           name: deploy_dist
       - name: Deploy to GitHub Pages
